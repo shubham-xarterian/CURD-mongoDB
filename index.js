@@ -5,6 +5,7 @@ const createRoutes = require("./src/routes/create.routes");
 const readRoutes = require("./src/routes/read.routes");
 const deleteRouter = require("./src/routes/delete.routes");
 const updateRouter = require("./src/routes/update.routes");
+const authRouter = require("./src/routes/auth.routes")
 
 const app = express();
 const PORT = 8082;
@@ -20,6 +21,7 @@ app.use("/create", createRoutes);
 app.use("/read", readRoutes);
 app.use("/delete", deleteRouter);
 app.use("/update", updateRouter);
+app.use("/auth", authRouter);
 
 mongoose
   .connect(`${DB_URI}`)
